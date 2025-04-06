@@ -10,7 +10,7 @@ import wandb
 from peft import LoraConfig
 from trl import SFTTrainer, SFTConfig
 import pandas as pd
-from sft.utils import create_train_datasets
+from utils import create_train_datasets
 from dotenv import load_dotenv
 import os 
 from huggingface_hub import login
