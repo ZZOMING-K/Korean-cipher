@@ -1,0 +1,10 @@
+model:
+  base_model: "zzoming/hangul-restore-model" 
+  bilstm_path: "BiLSTM/best_model_checkpoint.pth"  
+ 
+inference:
+  temperature: 0.2  
+  top_p: 0.8       
+  top_k: 30        
+  seed: 42
+  max_tokens : 2048 

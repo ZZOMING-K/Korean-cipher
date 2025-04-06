@@ -1,0 +1,37 @@
+# model load 
+training:
+  base_model: "beomi/gemma-ko-7b"
+  output_dir: "gemma-restore-adapter"  
+  adapter_dir: "gemma-adapters" 
+  eval_strategy: "steps"  
+  eval_steps: 100  
+  batch_size: 1 
+  gradient_accumulation_steps: 8 
+  epochs: 1.0
+  lr_scheduler_type: "linear"  
+  learning_rate: 2e-04
+  warmup_ratio: 0.06
+  logging_strategy : "steps"
+  logging_steps: 10
+  eval_strategy : "steps"
+  save_strategy: "epoch"
+  seed: 42  
+  optimizer : "adamw_torch"
+
+# quantization
+quantization:
+  load_in_4bit: true
+  bnb_4bit_compute_dtype: "bfloat16"
+  bnb_4bit_quant_type: "nf4"
+  bnb_4bit_use_double_quant: true
+
+# Lora 
+lora:
+  r: 16  
+  alpha: 32 
+  dropout: 0.1  
+  target_modules: ["q_proj", "o_proj", "k_proj", "v_proj", "gate_proj", "up_proj", "down_proj"]
+
+# data load
+data:
+  path: "../data/aug_inference_result.csv"  # 데이터셋 경로
