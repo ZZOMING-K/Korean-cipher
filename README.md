@@ -10,13 +10,11 @@
 
 # 진행기간 및 성과
 
-- 2025.01 ~ 2025.02 ( 약 1달간 진행 )
-- 개인참가
+- 2025.01 ~ 2025.02 ( 약 1달간 진행 / 개인참가 )
 - **상위 10% 내 등수 기록** (22등 / 291팀)
 - F1 Score  : 0.44 → 0.85
+- 데이터 셋 :  [난독화된 한글 리뷰 복원 AI 경진대회](https://dacon.io/competitions/official/236446/overview/description)
   
-# 데이터 셋 
-Dacon : [난독화된 한글 리뷰 복원 AI 경진대회](https://dacon.io/competitions/official/236446/overview/description)
 <br>
 
 # 개발 프로세스 
@@ -28,15 +26,28 @@ Dacon : [난독화된 한글 리뷰 복원 AI 경진대회](https://dacon.io/com
 
 ### 2. BiLSTM Model Training
 - 🙌 [BiLSTM Model Checkpoint](https://drive.google.com/drive/u/0/my-drive)
-- 입출력의 글자 위치가 동일해야하는 대회 특성 상 **`Encoder`** 모델 및 음절단위 Tokenizer 활용
-- Many-to-Many Classification 관점으로 학습 및 추론 진행
+- 대회 특성 상 입출력 글자 위치 동일 및 글자별 랜덤 난독화 →  **`Encoder`** 모델 및 음절단위 Tokenizer 활용
+- Many-to-Many Classification 방식으로 학습 및 추론 수행
 - 문맥상 자연스러운 변환에 한계 → 후처리(맞춤법 교정 등) 필요 
 
 ### 3. Gemma Model Training 
 - 🙌 [LLM(Hugging Face)](https://huggingface.co/zzoming/hangul-restore-model)
 - 문맥 및 맞춤법 교정 강화를 위해 SFT(Supervised Fine-Tuning) 진행 
-- Quantization 및 PEFT(Parameter Efficient Fine-Tuning) 적용하여 경량화 학습
-- [Fine-Tuning에 활용한 모델](https://huggingface.co/beomi/gemma-ko-7b)이 Chat Model이 아니므로 `Alpaca prompt` 활용 
+- Quantization 및 PEFT(Parameter Efficient Fine-Tuning) 적용하여 경량화 
+- [Fine-Tuning에 활용한 모델](https://huggingface.co/beomi/gemma-ko-7b) → Chat Model이 아니므로 `Alpaca prompt` 활용 
+
+
+**✅ 출력 예시**
+```
+# input
+풀룐투갸 엎코, 좀식또 업읍머, 윌뱐 잎츔민든릿 샤있샤윔엡 위썬 호뗄첨렴 관뤽갉 찰 앉 뙨는 누뀜뮈넬오. 까썽뷔갚 떨여쳐옵.
+
+# BiLSTM inference
+프론트가 없고, 조식도 없으며, 일반 입주민들리 사이사임에 있어 호텔처럼 관리가 잘 안되는 느낌이네요. 가성비가 떨어져요.
+
+# Gemma inference
+프론트가 없고, 조식도 없으며, 일반 입주민들이 사이사이에 있어 호텔처럼 관리가 잘 안되는 느낌이네요. 가성비가 떨어져요. 
+```
 
 
 ### 프롬프트 엔지니어링
@@ -77,7 +88,6 @@ instruction
 | **Programming**    | ![Python](https://img.shields.io/badge/-Python-3776AB?logo=python&logoColor=white) |
 | **Data&AI**           | ![Pandas](https://img.shields.io/badge/-Pandas-150458?logo=pandas&logoColor=white) ![NumPy](https://img.shields.io/badge/-NumPy-013243?logo=numpy&logoColor=white) ![PyTorch](https://img.shields.io/badge/-PyTorch-EE4C2C?logo=pytorch&logoColor=white) ![scikit-learn](https://img.shields.io/badge/-scikit--learn-F7931E?logo=scikit-learn&logoColor=white) ![HuggingFace](https://img.shields.io/badge/-HuggingFace-FFD21E?logo=huggingface&logoColor=white)|
 | **Web Interface**   | ![Gradio](https://img.shields.io/badge/-Gradio-F97316?logo=gradio&logoColor=white) |
-
 
 <br>
 
