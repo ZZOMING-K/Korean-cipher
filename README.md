@@ -36,6 +36,7 @@
 - Quantization 및 PEFT(Parameter Efficient Fine-Tuning) 적용하여 경량화 
 - [Fine-Tuning에 활용한 모델](https://huggingface.co/beomi/gemma-ko-7b) → Chat Model이 아니므로 `Alpaca prompt` 활용 
 
+<br>
 
 **✅ 출력 예시**
 ```
