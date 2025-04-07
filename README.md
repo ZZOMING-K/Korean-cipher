@@ -52,7 +52,7 @@
 
 
 ### 프롬프트 엔지니어링
-**instruction**
+**✅ instruction**
 
 ```
 instruction 
@@ -74,7 +74,7 @@ instruction
 
 이제 주어지는 문장을 위 조건에 따라 교정된 문장으로 출력하세요
 ```
-**Alpaca Prompt**
+**✅ Alpaca Prompt**
 ```
 "Below is an instruction that describes a task, paired with an input that provides further context.\n"
 "아래는 작업을 설명하는 명령어와 추가적 맥락을 제공하는 입력이 짝을 이루는 예제입니다.\n\n"
