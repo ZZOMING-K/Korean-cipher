@@ -1,7 +1,6 @@
 # HangulRestore 
 
 - 흔히 **에어비앤비체** 로 불리는 난독화된 한글 리뷰를 원본으로 복원하는 모델 개발
-- 🫠 [난독화된 한글 리뷰 복원 모델 개발 회고](https://until.blog/@zzoming/-dacon--%EB%82%9C%EB%8F%85%ED%99%94%EB%90%9C-%ED%95%9C%EA%B8%80-%EB%A6%AC%EB%B7%B0-%EB%B3%B5%EC%9B%90-ai-%EB%AA%A8%EB%8D%B8-%EA%B0%9C%EB%B0%9C%EA%B8%B0)
 <br>
 
 ![Image](https://github.com/user-attachments/assets/b6f6949b-f335-4093-99ca-b16f8cb3e2ba)
